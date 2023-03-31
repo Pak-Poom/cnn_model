@@ -3,40 +3,40 @@ RADI605 Modern Machine Learning assignment: Data Science for healthcare and clin
 
 ### Model explanation
 1. Set up and prepare data
-* 1.1\. Import all necessary tools
-* 1.2\. Prepare data
-	* 1.2.1\. Create directory paths for both the locations of each train, test and validation folder as well as all label.txt files
->> 1.2.2 Create new folders comprising of benign and malignant in each train, test and val folder and 
->> 1.2.3 Categorise all images in each folder by matching their names with image names from the target-label.txt and then copy the images to the created benign and malignant folders by looking at the target labels. 
+	* 1.1\. Import all necessary tools
+	* 1.2\. Prepare data
+		* 1.2.1\. Create directory paths for both the locations of each train, test and validation folder as well as all label.txt files
+		* 1.2.2\. Create new folders comprising of benign and malignant in each train, test and val folder and 
+		* 1.2.3\. Categorise all images in each folder by matching their names with image names from the target-label.txt and then copy the images to the created benign and malignant folders by looking at the target labels. 
 2. Conduct data processing
-	2.1 Normalise and augment the data with the “ImageDataGenerator( )” class by setting various important parameters inside the class. For this model, the setting is rescale=1.0/255, rotation_range=15, zoom_range=(0.95, 0.95), horizontal_flip=True, vertical_flip=True, and data_format=“channels_last” for the image_gen_train, while image_gen_val and image_gen_test are only done with normalisation with rescale=1.0/255.
-	2.2 Load the data and keep it in train_data_gen, val_data_gen, and test_data_gen with the “flow_from_directory ( )” class by setting some parameters inside including directory, target_size=(224,224), batch_size=32, color_mode=“rgb”, class_mode=“binary”, and seed, while shuffle was set as True except only test_data_gen
+	* 2.1\. Normalise and augment the data with the “ImageDataGenerator( )” class by setting various important parameters inside the class. For this model, the setting is rescale=1.0/255, rotation_range=15, zoom_range=(0.95, 0.95), horizontal_flip=True, vertical_flip=True, and data_format=“channels_last” for the image_gen_train, while image_gen_val and image_gen_test are only done with normalisation with rescale=1.0/255.
+	* 2.2\. Load the data and keep it in train_data_gen, val_data_gen, and test_data_gen with the “flow_from_directory ( )” class by setting some parameters inside including directory, target_size=(224,224), batch_size=32, color_mode=“rgb”, class_mode=“binary”, and seed, while shuffle was set as True except only test_data_gen
 3. Build a simpler sequential model
-	3.1  build up the model architecture by
-		3.1.1 Adding three convolutional 2D, “Conv2D ( )”, layers with different numbers of filter for each layer, including 16, 32 and 16, but the same kernel_size=(3, 3) and strides=1 
-		3.1.2 Adding max pooling (MaxPooling2D( )) layer after every layer of the Conv2D( ) to downsample the input along its spatial dimensions (height and width) by taking the maximum value over an input window (pool_size=(2,2)) for each channel of the input
-		3.1.3 Flattening the input (from output of the last layer of maxPooling) with “Flatten( )” 
-		3.1.4 Adding dense (Dense( )) and dropout (Dropout( )) layers with parameters setting of units=256 for the initial dense layer, 64 for the second, and 1 for the last one for binary classification, while the first dropout layer coming after the first dense layer was set as 0.5 and 0.2 for the last one
-		3.1.5 Setting activation for all convolutional 2D and dense layers with “relu”, except the last dense, which was set as “sigmoid” for binary classification
-		3.1.6 Compile the model with “BinaryCrossentropy” for loss, “Adam” for optimizer, and various metrics, including accuracy, precision, recall and auc, for metrics
-	3.2 Train the model with fit( ) method for 20 epochs, at the same time, the validation set was used for evaluating during the training. “keras.callbacks.TensorBoard( )” was used to collect the history of training output parameters
-	3.43Plot loss values (train_loss and val_loss) on a graph to see the trend of them
-	3.4 Evaluate and test the model
-	3.5 ROC curve, confusion matrix and classification report were used to visualise the prediction outputs
+	* 3.1\.  build up the model architecture by
+		* 3.1.1\. Adding three convolutional 2D, “Conv2D ( )”, layers with different numbers of filter for each layer, including 16, 32 and 16, but the same kernel_size=(3, 3) and strides=1 
+		* 3.1.2\. Adding max pooling (MaxPooling2D( )) layer after every layer of the Conv2D( ) to downsample the input along its spatial dimensions (height and width) by taking the maximum value over an input window (pool_size=(2,2)) for each channel of the input
+		* 3.1.3\. Flattening the input (from output of the last layer of maxPooling) with “Flatten( )” 
+		* 3.1.4\. Adding dense (Dense( )) and dropout (Dropout( )) layers with parameters setting of units=256 for the initial dense layer, 64 for the second, and 1 for the last one for binary classification, while the first dropout layer coming after the first dense layer was set as 0.5 and 0.2 for the last one
+		* 3.1.5\. Setting activation for all convolutional 2D and dense layers with “relu”, except the last dense, which was set as “sigmoid” for binary classification
+		* 3.1.6\. Compile the model with “BinaryCrossentropy” for loss, “Adam” for optimizer, and various metrics, including accuracy, precision, recall and auc, for metrics
+	* 3.2\. Train the model with fit( ) method for 20 epochs, at the same time, the validation set was used for evaluating during the training. “keras.callbacks.TensorBoard( )” was used to collect the history of training output parameters
+	* 3.3\. Plot loss values (train_loss and val_loss) on a graph to see the trend of them
+	* 3.4\. Evaluate and test the model
+	* 3.5\. ROC curve, confusion matrix and classification report were used to visualise the prediction outputs
 4. Build a transfer learning model
-	4.1 Build up a transfer learning model architecture
-		4.1.1 Import VGG16 to be used for this model
-		4.1.2 Set up parameters inside the “VGG16( )” model with input_shape=(224, 224, 3), weight=“imagenet”, and include_top=False. 
-		4.1.3 freeze the pre-trained architecture
-		4.1.4 Apply the same flatten layer until the final dense binary classification layer and compile the model with the same parameters as the simpler model 
-	4.2 Train, evaluate and test the model as well as visualise the prediction outputs like before.
+	* 4.1\. Build up a transfer learning model architecture
+		* 4.1.1\. Import VGG16 to be used for this model
+		* 4.1.2\. Set up parameters inside the “VGG16( )” model with input_shape=(224, 224, 3), weight=“imagenet”, and include_top=False. 
+		* 4.1.3\. freeze the pre-trained architecture
+		* 4.1.4\. Apply the same flatten layer until the final dense binary classification layer and compile the model with the same parameters as the simpler model 
+	* 4.2\. Train, evaluate and test the model as well as visualise the prediction outputs like before.
 5. Build a transfer learning model with fine-tuning
-	5.1 Build up a transfer learning architecture with fine tuning
-		5.1.1 Import VGG16 to be used for this model
-		5.1.2 Set up parameters inside the “VGG16( )” model with input_shape=(224, 224, 3), weight=“imagenet”, and include_top=False. 
-		5.1.3 freeze some layers of the pre-trained model as [ : 13] and train the rest of them to make the model architecture understand the new task.
-		5.1.4 Apply the same flatten layer until the final dense binary classification layer and compile the model with the same parameters as the simpler model 
-	5.2 Train, evaluate and test the model as well as visualise the prediction outputs like before.
+	* 5.1\. Build up a transfer learning architecture with fine tuning
+		* 5.1.1\. Import VGG16 to be used for this model
+		* 5.1.2\. Set up parameters inside the “VGG16( )” model with input_shape=(224, 224, 3), weight=“imagenet”, and include_top=False. 
+		* 5.1.3\. freeze some layers of the pre-trained model as [ : 13] and train the rest of them to make the model architecture understand the new task.
+		* 5.1.4\. Apply the same flatten layer until the final dense binary classification layer and compile the model with the same parameters as the simpler model 
+	* 5.2\. Train, evaluate and test the model as well as visualise the prediction outputs like before.
 
 ### Questions:
 1. Apply data augmentation process to generate training, validation, and test set.  Explanation in details is a must, for example, what are the image manipulation technique that you use and why did you think it is appropriate for this problem.
