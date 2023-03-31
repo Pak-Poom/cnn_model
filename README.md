@@ -2,19 +2,10 @@
 RADI605 Modern Machine Learning assignment: Data Science for healthcare and clinical informatics (M.Sc.)
 
 ### Model explanation
-<!-- !toc (level=1) -->
-
-1.1 [One](#one)
-1.2 [Two](#two)
-
-<!-- toc! -->
-
-!toc (2)
-
 1. Set up and prepare data
-> 1.1 Import all necessary tools
-> 1.2. Prepare data
->> 1.2.1 Create directory paths for both the locations of each train, test and validation folder as well as all label.txt files
+* 1.1\ Import all necessary tools
+* 1.2\ Prepare data
+** 1.2.1\ Create directory paths for both the locations of each train, test and validation folder as well as all label.txt files
 >> 1.2.2 Create new folders comprising of benign and malignant in each train, test and val folder and 
 >> 1.2.3 Categorise all images in each folder by matching their names with image names from the target-label.txt and then copy the images to the created benign and malignant folders by looking at the target labels. 
 2. Conduct data processing
