@@ -4,8 +4,8 @@ RADI605 Modern Machine Learning assignment: Data Science for healthcare and clin
 ### Model explanation
 <!-- !toc (level=2) -->
 
-* [One](#one)
-* [Two](#two)
+1.1 [One](#one)
+1.2 [Two](#two)
 
 <!-- toc! -->
 
