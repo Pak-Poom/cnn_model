@@ -19,7 +19,7 @@ RADI605 Modern Machine Learning assignment: Data Science for healthcare and clin
 		* 3.1.4\. Adding dense (Dense( )) and dropout (Dropout( )) layers with parameters setting of units=256 for the initial dense layer, 64 for the second, and 1 for the last one for binary classification, while the first dropout layer coming after the first dense layer was set as 0.5 and 0.2 for the last one
 		* 3.1.5\. Setting activation for all convolutional 2D and dense layers with “relu”, except the last dense, which was set as “sigmoid” for binary classification
 		* 3.1.6\. Compile the model with “BinaryCrossentropy” for loss, “Adam” for optimizer, and various metrics, including accuracy, precision, recall and auc, for metrics
-	* 3.2\. Train the model with fit( ) method for 20 epochs, at the same time, the validation set was used for evaluating during the training. “keras.callbacks.TensorBoard( )” was used to collect the history of training output parameters
+	* 3.2\. Train the model with fit( ) method for 20 epochs. Apart from the training dataset, the validation set was also used for model evaluation during that training. The “keras.callbacks.TensorBoard( )” was used to collect all trained output parameters in a history.
 	* 3.3\. Plot loss values (train_loss and val_loss) on a graph to see the trend of them
 	* 3.4\. Evaluate and test the model
 	* 3.5\. ROC curve, confusion matrix and classification report were used to visualise the prediction outputs
