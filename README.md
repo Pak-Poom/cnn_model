@@ -2,7 +2,7 @@
 RADI605 Modern Machine Learning assignment: Data Science for healthcare and clinical informatics (M.Sc.)
 
 ### Model explanation
-<!-- !toc (level=2) -->
+<!-- !toc (level=1) -->
 
 1.1 [One](#one)
 1.2 [Two](#two)
