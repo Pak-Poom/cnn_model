@@ -1,7 +1,7 @@
 # Convolutional-Neural-Network-CNN-model
 RADI605 Modern Machine Learning assignment: Data Science for healthcare and clinical informatics (M.Sc.)
 
-### Model explanation
+### Model creation and explanation
 1. Set up and prepare data
 	* 1.1\. Import all necessary tools
 	* 1.2\. Prepare data
@@ -27,24 +27,24 @@ RADI605 Modern Machine Learning assignment: Data Science for healthcare and clin
 	* 4.1\. Build up a transfer learning model architecture
 		* 4.1.1\. Import VGG16 to be used for this model
 		* 4.1.2\. Set up parameters inside the “VGG16( )” model with input_shape=(224, 224, 3), weight=“imagenet”, and include_top=False. 
-		* 4.1.3\. freeze the pre-trained architecture
+		* 4.1.3\. Freeze the pre-trained architecture
 		* 4.1.4\. Apply the same flatten layer until the final dense binary classification layer and compile the model with the same parameters as the simpler model 
-	* 4.2\. Train, evaluate and test the model as well as visualise the prediction outputs like before.
+	* 4.2\. Train, evaluate and test the model as well as visualise the prediction outputs like the previous one.
 5. Build a transfer learning model with fine-tuning
 	* 5.1\. Build up a transfer learning architecture with fine tuning
 		* 5.1.1\. Import VGG16 to be used for this model
 		* 5.1.2\. Set up parameters inside the “VGG16( )” model with input_shape=(224, 224, 3), weight=“imagenet”, and include_top=False. 
-		* 5.1.3\. freeze some layers of the pre-trained model as [ : 13] and train the rest of them to make the model architecture understand the new task.
+		* 5.1.3\. Freeze some layers of the pre-trained model as [:13] and train the rest of them to make the model architecture understand the new task.
 		* 5.1.4\. Apply the same flatten layer until the final dense binary classification layer and compile the model with the same parameters as the simpler model 
-	* 5.2\. Train, evaluate and test the model as well as visualise the prediction outputs like before.
+	* 5.2\. Train, evaluate and test the model as well as visualise the prediction outputs like the previous one.
 
 ### Questions:
 1. Apply data augmentation process to generate training, validation, and test set.  Explanation in details is a must, for example, what are the image manipulation technique that you use and why did you think it is appropriate for this problem.
 
-	Due to overfitting given by the the original simpler sequential model, data augmentation was required to improve the model performance. In order to do that for this model, image rotation, zoom, and both horizontal and vertical image flipping were applied for the training dataset only by setting them inside the class of “ImageDataGenerator( )” presented in the data pre-processing library so that the samples belonging to the under-represented class were able to be more regenerated in order to have equal representation of both benign and malignant classes. This technique can help getting more diversity in the data resulting in helping the model generalise, while also reducing the bias. 
+	Due to overfitting given by the the original simpler sequential model, data augmentation was required to improve the model performance. In order to do that, rescale, image rotation, zoom, and both horizontal and vertical image flipping were applied for the training dataset only by setting them inside the “ImageDataGenerator( )” class presented in the data pre-processing library so that the image pixels were generalised as well as the samples belonging to the under-represented class were able to be more regenerated in order to have equal representation of both benign and malignant classes. This technique can help getting more diversity in the data resulting in helping the model generalise, while also reducing the bias. For the validation and test set, only rescale was required.
 	<br />
 	<br />
-	Starting with a pixel normalisation technique, rescaling pixel values was done by 1.0/255 to scale the data to a range of 0-1. Rotation angle was then set to 15 degrees, while zoom range was (0.95, 0.95) to zoom the image randomly by 95%. In addition, both horizontal and vertical flipping were also applied to the model in order to create more variety of images in the dataset. Definitely, this flipping technique did not change the original meaning of this kind of image data at all.
+	Starting with a pixel normalisation technique, rescaling pixel values was done by 1.0/255 in order to scale the data to a range of 0 and 1. Rotation angle was then set to 15 degrees, while zoom range was (0.95, 0.95) to zoom the image randomly by 95%. In addition, both horizontal and vertical flipping were also applied to the model in order to create more variety of images in the dataset. Definitely, this flipping technique did not change the original meaning of this kind of the images at all.
 
 2. Compare model at 3. (simppler sequential model) and 4. (transfer learning model) with appropriate evaluation metrics.  Explain why those metrics are suitable
 
