@@ -3,8 +3,8 @@ RADI605 Modern Machine Learning assignment: Data Science for healthcare and clin
 
 ### Model explanation
 1. Set up and prepare data
-	1.1 Import all necessary tools
-	1.2 Prepare data
+	1.1. Import all necessary tools
+	1.2. Prepare data
 		1.2.1 Create directory paths for both the locations of each train, test and validation folder as well as all label.txt files
 		1.2.2 Create new folders comprising of benign and malignant in each train, test and val folder and 
 		1.2.3 Categorise all images in each folder by matching their names with image names from the target-label.txt and then copy the images to the created benign and malignant folders by looking at the target labels. 
@@ -39,7 +39,6 @@ RADI605 Modern Machine Learning assignment: Data Science for healthcare and clin
 	5.2 Train, evaluate and test the model as well as visualise the prediction outputs like before.
 
 ### Questions:
-<br />
 1. Apply data augmentation process to generate training, validation, and test set.  Explanation in details is a must, for example, what are the image manipulation technique that you use and why did you think it is appropriate for this problem.
 
 	Due to overfitting given by the the original simpler sequential model, data augmentation was required to improve the model performance. In order to do that for this model, image rotation, zoom, and both horizontal and vertical image flipping were applied for the training dataset only by setting them inside the class of “ImageDataGenerator( )” presented in the data pre-processing library so that the samples belonging to the under-represented class were able to be more regenerated in order to have equal representation of both benign and malignant classes. This technique can help getting more diversity in the data resulting in helping the model generalise, while also reducing the bias. 
