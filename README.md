@@ -7,7 +7,7 @@ RADI605 Modern Machine Learning assignment: Data Science for healthcare and clin
 	* 1.2\. Prepare data
 		* 1.2.1\. Create directory paths for both the locations of each train, test and validation folder as well as all label.txt files
 		* 1.2.2\. Create new folders comprising of benign and malignant in each train, test and val folder and 
-		* 1.2.3\. Categorise all images in each folder by matching their names with image names from the target-label.txt and then copy the images to the created benign and malignant folders by looking at the target labels. 
+		* 1.2.3\. Categorise all images in each folder by matching their names with image names from the target-label.txt and then copy the images to the created benign and malignant folders by looking at the target labels 
 2. Conduct data processing
 	* 2.1\. Normalise and augment the data with the “ImageDataGenerator( )” class by setting various important parameters inside the class. For this model, the setting is rescale=1.0/255, rotation_range=15, zoom_range=(0.95, 0.95), horizontal_flip=True, vertical_flip=True, and data_format=“channels_last” for the image_gen_train, while image_gen_val and image_gen_test are only done with normalisation with rescale=1.0/255.
 	* 2.2\. Load the data and keep it in train_data_gen, val_data_gen, and test_data_gen with the “flow_from_directory ( )” class by setting some parameters inside including directory, target_size=(224,224), batch_size=32, color_mode=“rgb”, class_mode=“binary”, and seed, while shuffle was set as True except test_data_gen
@@ -26,17 +26,17 @@ RADI605 Modern Machine Learning assignment: Data Science for healthcare and clin
 4. Build a transfer learning model
 	* 4.1\. Build up a transfer learning model architecture
 		* 4.1.1\. Import VGG16 to be used for this model
-		* 4.1.2\. Set up parameters inside the “VGG16( )” model with input_shape=(224, 224, 3), weight=“imagenet”, and include_top=False. 
+		* 4.1.2\. Set up parameters inside the “VGG16( )” model with input_shape=(224, 224, 3), weight=“imagenet”, and include_top=False 
 		* 4.1.3\. Freeze the pre-trained architecture
 		* 4.1.4\. Apply the same flatten layer until the final dense binary classification layer and compile the model with the same parameters as the simpler model 
-	* 4.2\. Train, evaluate and test the model as well as visualise the prediction outputs like the previous one.
+	* 4.2\. Train, evaluate and test the model as well as visualise the prediction outputs like the previous one
 5. Build a transfer learning model with fine-tuning
 	* 5.1\. Build up a transfer learning architecture with fine tuning
 		* 5.1.1\. Import VGG16 to be used for this model
-		* 5.1.2\. Set up parameters inside the “VGG16( )” model with input_shape=(224, 224, 3), weight=“imagenet”, and include_top=False. 
+		* 5.1.2\. Set up parameters inside the “VGG16( )” model with input_shape=(224, 224, 3), weight=“imagenet”, and include_top=False 
 		* 5.1.3\. Freeze some layers of the pre-trained model as [:13] and train the rest of them to make the model architecture understand the new task.
 		* 5.1.4\. Apply the same flatten layer until the final dense binary classification layer and compile the model with the same parameters as the simpler model 
-	* 5.2\. Train, evaluate and test the model as well as visualise the prediction outputs like the previous one.
+	* 5.2\. Train, evaluate and test the model as well as visualise the prediction outputs like the previous one
 
 ### Questions:
 1. Apply data augmentation process to generate training, validation, and test set.  Explanation in details is a must, for example, what are the image manipulation technique that you use and why did you think it is appropriate for this problem.
