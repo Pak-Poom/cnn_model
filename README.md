@@ -10,7 +10,7 @@ RADI605 Modern Machine Learning assignment: Data Science for healthcare and clin
 		* 1.2.3\. Categorise all images in each folder by matching their names with image names from the target-label.txt and then copy the images to the created benign and malignant folders by looking at the target labels. 
 2. Conduct data processing
 	* 2.1\. Normalise and augment the data with the “ImageDataGenerator( )” class by setting various important parameters inside the class. For this model, the setting is rescale=1.0/255, rotation_range=15, zoom_range=(0.95, 0.95), horizontal_flip=True, vertical_flip=True, and data_format=“channels_last” for the image_gen_train, while image_gen_val and image_gen_test are only done with normalisation with rescale=1.0/255.
-	* 2.2\. Load the data and keep it in train_data_gen, val_data_gen, and test_data_gen with the “flow_from_directory ( )” class by setting some parameters inside including directory, target_size=(224,224), batch_size=32, color_mode=“rgb”, class_mode=“binary”, and seed, while shuffle was set as True except only test_data_gen
+	* 2.2\. Load the data and keep it in train_data_gen, val_data_gen, and test_data_gen with the “flow_from_directory ( )” class by setting some parameters inside including directory, target_size=(224,224), batch_size=32, color_mode=“rgb”, class_mode=“binary”, and seed, while shuffle was set as True except test_data_gen
 3. Build a simpler sequential model
 	* 3.1\.  build up the model architecture by
 		* 3.1.1\. Adding three convolutional 2D, “Conv2D ( )”, layers with different numbers of filter for each layer, including 16, 32 and 16, but the same kernel_size=(3, 3) and strides=1 
