@@ -2,6 +2,12 @@
 RADI605 Modern Machine Learning assignment: Data Science for healthcare and clinical informatics (M.Sc.)
 
 ### Model explanation
+<!-- !toc (level=2) -->
+
+* [One](#one)
+* [Two](#two)
+
+<!-- toc! -->
 1. Set up and prepare data
 > 1.1 Import all necessary tools
 > 1.2. Prepare data
