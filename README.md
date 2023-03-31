@@ -3,7 +3,7 @@ RADI605 Modern Machine Learning assignment: Data Science for healthcare and clin
 
 ### Model explanation
 1. Set up and prepare data
-	1. Import all necessary tools
+	## Sub 1.1 Import all necessary tools
 	1.2. Prepare data
 		1.2.1 Create directory paths for both the locations of each train, test and validation folder as well as all label.txt files
 		1.2.2 Create new folders comprising of benign and malignant in each train, test and val folder and 
