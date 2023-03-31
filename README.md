@@ -1,6 +1,27 @@
 # Convolutional-Neural-Network-CNN-model
 RADI605 Modern Machine Learning assignment: Data Science for healthcare and clinical informatics (M.Sc.)
 
+---
+**NOTE**
+
+Develop your CNN model to classify benign and malignancy.  You have 3 weeks to finish it.
+1. Use the nodulenet dataset, the data in image file where the labels were stored in csv files.
+2. Data splitting was done already.  You only need to read image files to numpy array.
+3. Make sure that you have set all required seeds for your experiment
+4. Apply data augmentation process to generate training, validation, and test set.  Explanation in details is a must, for example, what are the image manipulation technique that you use and why did you think it is appropriate for this problem.
+5. Propose your model architecture
+6. Propose another model that apply transfer learning
+7. Compare model at 4 and 5 with appropriate evaluation metrics.  Explain why those metrics are suitable
+8. Discuss on the results why one is better than another.
+9. Suggests how to improve the weaker one and do additional experiment to show that your suggestions works.
+
+Submission:
+Put your source code in GitHub.  Write explanations for all steps in the readme.md file.  Submit your GitHub link to google classroom.  DO NOT attach the dataset in your GitHub.
+
+Grading: Each part has 10 scores.  The full score of this assignment is 80 (part 1 was non-grading).
+
+---
+
 ### Model creation and explanation
 1. Set up and prepare data
 	* 1.1\. Import all necessary tools
